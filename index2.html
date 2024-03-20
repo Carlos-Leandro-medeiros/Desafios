@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const valorCompra = parseFloat(prompt("Informe o valor das compras:"))
+const tipoCliente = Number(prompt(`
+Informe o tipo de usuário:
+[1]- cliente comum
+[2]- Funcionário
+[3]- cliente vip
+`)
+);
+
+let totalComDesconto
+
+switch (tipoCliente) {
+    case 1:
+        alert("O cliente não teve nenhum desconto")
+        break;
+case 2:
+    totalComDesconto = valorCompra * 0.1;
+   
+   
+    alert(`Recebeu 10% de desconto em sua compra, tendo um total de desconto de ${totalComDesconto} reais.O total de sua compra é de: ${valorCompra - totalComDesconto} reais`);
+    break;
+    case 3:
+        totalComDesconto = valorCompra* 0.05
+
+        alert(`
+    Recebeu 5% de desconto em sua compra, tendo um total de desconto de: ${totalComDesconto} reais. O total de sua compra é de: ${valorCompra} reais`)
+    default:
+        break;
+}
+    </script>
+</body>
+</html>
