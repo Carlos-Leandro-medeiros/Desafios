@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+    color:rgb(0, 136, 255)
+}
+h1 {
+    font-size: 8em;
+    text-align: center;
+    background-image: url(./neom-Oj8w6hWC0dU-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+    background-clip: text;
+}
