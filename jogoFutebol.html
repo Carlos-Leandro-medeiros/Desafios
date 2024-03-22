@@ -6,8 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="jogoFutebol.js">
 
+    <script>
+        const nometime01 = prompt("Informe o nome do time 01:")
+        const placartome01 = prompt(`Informe o placar do time: ${nometime01}`)
+
+        const nometime2 = prompt("Informe o nome do time 02:")
+        const placartime02 = prompt(`Informe o placar do time: ${nometime2}`)
+
+        if (placartome01 > placartime02) {
+            alert(
+                `O time ${nometime01} ganhou do time ${nometime2}. Por um placar de ${placartome01} x ${placartime02}`
+            );
+        }else if (placartome01 < placartime02) {
+            alert(
+                `O time ${nometime2} ganhou do time ${nometime01}. Por um placar de ${placartime02} x ${placartome01}`
+            );
+        }else {
+            alert(`O time ${nometime2} empatou com o ${nometime01}. Por um placar de ${placartime02} x ${placartome01}`)
+        }
     </script>
 </body>
 </html>
