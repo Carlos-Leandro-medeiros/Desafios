@@ -1,0 +1,230 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Guilherme Amorim" />
+  <title>Agenda de Contatos</title>
+</head>
+<body>
+  <script>
+    let agenda = [];
+
+    function showMenu() {
+      return parseInt(
+        prompt(`
+              *****Menu*****
+              [1] - Adicionar contato
+              [2] - Visualizar contatos
+              [3] - Editar contato
+              [4] - Excluir contato
+              [5] - Sair do programa
+          `)
+      );
+    }
+
+    function adicionarContato() {
+      const nome = prompt("Informe o nome do contato:");
+      const numero = prompt("Informe o número do contato:");
+      const email = prompt("Informe o email do contato:");
+      const dataHora = new Date();
+
+      if (!nome || !numero || !email) {
+        alert("Os campos são obrigatórios!");
+        return;
+      }
+
+      agenda.push({ nome, numero, email, dataHora });
+      alert("Contato adicionado com sucesso!");
+    }
+
+    function visualizarContatos() {
+      let listaContatos = "";
+
+      agenda.forEach((contato, index) => {
+        listaContatos += `
+          Contato ${index + 1}:
+          Nome: ${contato.nome}
+          Número: ${contato.numero}
+          Email: ${contato.email}
+          Data e Hora de Adição: ${contato.dataHora}
+          \n`;
+      });
+
+      alert("*****Lista de contatos*****\n" + listaContatos);
+    }
+
+    function editarContato() {
+      visualizarContatos();
+      const indice = parseInt(prompt("Digite o número do contato que deseja editar:")) - 1;
+
+      if (agenda[indice]) {
+        const nome = prompt("Informe o novo nome do contato:");
+        const numero = prompt("Informe o novo número do contato:");
+        const email = prompt("Informe o novo email do contato:");
+
+        if (nome && numero && email) {
+          agenda[indice].nome = nome;
+          agenda[indice].numero = numero;
+          agenda[indice].email = email;
+          alert("Contato editado com sucesso!");
+        } else {
+          alert("Os campos são obrigatórios!");
+        }
+      } else {
+        alert("Contato não encontrado!");
+      }
+    }
+
+    function excluirContato() {
+      visualizarContatos();
+      const indice = parseInt(prompt("Digite o número do contato que deseja excluir:")) - 1;
+
+      if (agenda[indice]) {
+        agenda.splice(indice, 1);
+        alert("Contato excluído com sucesso!");
+      } else {
+        alert("Contato não encontrado!");
+      }
+    }
+
+    let continuar = true;
+
+    while (continuar) {
+      switch (showMenu()) {
+        case 1:
+          adicionarContato();
+          break;
+        case 2:
+          visualizarContatos();
+          break;
+        case 3:
+          editarContato();
+          break;
+        case 4:
+          excluirContato();
+          break;
+        case 5:
+          alert("Saindo do programa, até mais!");
+      }
+          continuar = false;
+    } -->
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Carlos Leandro" />
+  <title>Agenda de Contatos</title>
+</head>
+<body>
+  <script>
+    let agenda = [];
+
+    function showMenu() {
+      return parseInt(
+        prompt(`
+              *****Menu*****
+              [1] - Adicionar contato
+              [2] - Visualizar contatos
+              [3] - Editar contato
+              [4] - Excluir contato
+              [5] - Sair do programa
+          `)
+      );
+    }
+
+    function adicionarContato() {
+      const nome = prompt("Informe o nome do contato:");
+      const numero = prompt("Informe o telefone do contato:");
+      const email = prompt("Informe o email do contato:");
+      
+      if (!nome || !numero || !email) {
+        alert("Os campos são obrigatórios!");
+        return;
+      }
+      
+      const dateAdded = new Date(). toLocaleString();
+      agenda.push({ nome, numero, email, dateAdded });
+      alert("Contato adicionado com sucesso!");
+    }
+
+    function visualizarContatos() {
+      let listaContatos = "";
+
+      agenda.forEach((contato, index) => {
+        listaContatos += `
+          Contato ${index + 1}:
+          Nome: ${contato.nome}
+          Telefone: ${contato.numero}
+          Email: ${contato.email}
+          Data e Hora: ${contato.dateAdded}\n\n`;
+      });
+
+      alert("*****Lista de contatos*****\n" + listaContatos);
+    }
+
+    function editarContato() {
+      visualizarContatos();
+      const indice = parseInt(prompt("Digite o número do contato que deseja editar:")) - 1;
+
+      if (agenda[indice]) {
+        const nome = prompt("Informe o novo nome do contato:");
+        const numero = prompt("Informe o novo telefone do contato:");
+        const email = prompt("Informe o novo email do contato:");
+
+        if (nome && numero && email) {
+          agenda[indice].nome = nome;
+          agenda[indice].numero = numero;
+          agenda[indice].email = email;
+          alert("Contato editado com sucesso!");
+        } else {
+          alert("Os campos são obrigatórios!");
+        }
+      } else {
+        alert("Contato não encontrado!");
+      }
+    }
+
+    function excluirContato() {
+      visualizarContatos();
+      const indice = parseInt(prompt("Digite o número do contato que deseja excluir:")) - 1;
+
+      if (agenda[indice]) {
+        agenda.splice(indice, 1);
+        alert("Contato excluído com sucesso!");
+      } else {
+        alert("Contato não encontrado!");
+      }
+    }
+
+    let continuar = true;
+
+    while (continuar) {
+      const opcao = showMenu();
+      switch (opcao) {
+        case 1:
+          adicionarContato();
+          break;
+        case 2:
+          visualizarContatos();
+          break;
+        case 3:
+          editarContato();
+          break;
+        case 4:
+          excluirContato();
+          break;
+        case 5:
+          alert("Saindo do programa, até mais!");
+          continuar = false;
+          break;
+        default:
+          alert("Opção inválida! Tente novamente.");
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
